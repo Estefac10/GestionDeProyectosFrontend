@@ -1,15 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background-image: url(../styles/fondoBody.jpg);
+  
+  background-size: cover;
+}
+
 .sidebar {
+  font-family: 'Times New Roman', Times, serif;
   @apply w-64 bg-gray-200 shadow flex-col justify-between;
+  background: #131419;
+  background-image: url(../styles/fondo.jpg);
 }
 
 .sidebar-route {
+  font-family: 'Times New Roman', Times, serif;
   @apply rounded-md flex w-full justify-between cursor-pointer items-center m-3 p-3;
+  color: rgb(201, 201, 201);
+
 }
 
 .input {
+  font-family: 'Times New Roman', Times, serif;
   @apply p-2 border border-indigo-200 focus:outline-none focus:border-indigo-800 rounded-md shadow-sm;
 }

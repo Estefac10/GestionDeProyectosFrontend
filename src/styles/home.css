@@ -1,0 +1,17 @@
+.home{
+
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+}
+.titulo{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 30px;
+}
+.child{
+
+    position: relative;
+    top: 90px;
+}
