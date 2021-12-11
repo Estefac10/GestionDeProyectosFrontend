@@ -1,0 +1,26 @@
+.auth{
+    background: #000428; 
+    background: -webkit-linear-gradient(to bottom, #004e92, #000428); 
+    background: linear-gradient(to bottom, #004e92, #000428);  
+    
+    height: 100vh;
+}
+.form{
+    
+    width: 35%;
+    margin: 0 auto;
+    position: relative;
+    top: 250px;
+}
+.titleLogin{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+.text{
+    color: white;
+}
+.cont-register{
+    position: relative;
+    bottom: 140px;
+}

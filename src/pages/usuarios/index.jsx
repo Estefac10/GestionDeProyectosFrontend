@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { Enum_Rol, Enum_EstadoUsuario } from 'utils/enums';
 import PrivateRoute from 'components/PrivateRoute';
+import "../../styles/tablaUsuarios.css"
 
 const IndexUsuarios = () => {
   const { data, error, loading } = useQuery(GET_USUARIOS);
@@ -15,12 +16,13 @@ const IndexUsuarios = () => {
     }
   }, [error]);
 
-  if (loading) return <div>Cargando....</div>;
+  if (loading) return <div>Cargando...</div>;
 
   return (
     <PrivateRoute roleList={['ADMINISTRADOR']}>
-      <div>
-        Datos Usuarios:
+      
+      <div className="tabla-usuarios">
+        
         <table className='tabla'>
           <thead>
             <tr>

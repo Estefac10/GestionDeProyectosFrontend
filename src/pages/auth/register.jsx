@@ -9,6 +9,7 @@ import { REGISTRO } from 'graphql/auth/mutations';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router';
 import { useAuth } from 'context/authContext';
+import "../../styles/auth.css"
 
 const Register = () => {
   const { setToken } = useAuth();
@@ -33,16 +34,24 @@ const Register = () => {
   }, [dataMutation, setToken, navigate]);
 
   return (
-    <div className='flex flex-col h-full w-full items-center justify-center'>
-      <h1 className='text-3xl font-bold my-4'>Regístrate</h1>
+    <div className='cont-register'>
+      <h1 className='text-3xl font-bold my-4 text'>Regístrate</h1>
+      <br />
+      <br />
       <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
         <div className='grid grid-cols-2 gap-5'>
-          <Input label='Nombre:' name='nombre' type='text' required />
-          <Input label='Apellido:' name='apellido' type='text' required />
-          <Input label='Documento:' name='identificacion' type='text' required />
-          <DropDown label='Rol deseado:' name='rol' required={true} options={Enum_Rol} />
-          <Input label='Correo:' name='correo' type='email' required />
-          <Input label='Contraseña:' name='password' type='password' required />
+        <p className="text">Nombre:</p>
+          <Input name='nombre' type='text' required />
+          <p className="text">Apellido:</p>
+          <Input name='apellido' type='text' required />
+          <p className="text">Documento:</p>
+          <Input name='identificacion' type='text' required />
+          <p className="text">Selecciona el Rol que deseas:</p>
+          <DropDown name='rol' required={true} options={Enum_Rol} />
+          <p className="text">Correo:</p>
+          <Input name='correo' type='email' required />
+          <p className="text">Contraseña:</p>
+          <Input name='password' type='password' required />
         </div>
         <ButtonLoading
           disabled={Object.keys(formData).length === 0}
@@ -50,7 +59,7 @@ const Register = () => {
           text='Registrarme'
         />
       </form>
-      <span>¿Ya tienes una cuenta?</span>
+      <span className="text">¿Ya tienes una cuenta?</span>
       <Link to='/auth/login'>
         <span className='text-blue-700'>Inicia sesión</span>
       </Link>

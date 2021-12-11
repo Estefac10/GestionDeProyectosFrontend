@@ -6,18 +6,21 @@ import "../styles/Sidebar.css"
 
 const SidebarLinks = () => {
   return (
-    <ul className='mt-12'>
-      <SidebarRoute to='' title='Inicio' icon='fas fa-home' />
+    <div className="father">
+          <ul className='mt-12'>
+      <SidebarRoute to='' title='Inicio'  />
       <PrivateComponent roleList={['ADMINISTRADOR']}>
-        <SidebarRoute to='/usuarios' title='Usuarios' icon='fas fa-user' />
+        <SidebarRoute to='/usuarios' title='Usuarios'  />
       </PrivateComponent>
-      <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-smile-wink' />
+      <SidebarRoute to='/proyectos' title='Proyectos'  />
       <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-        <SidebarRoute to='/inscripciones' title='Aprobacion Inscripciones' icon='fas fa-user' />
+        <SidebarRoute to='/inscripciones' title='Aprobacion Inscripciones' />
       </PrivateComponent>
       
       <Logout />
     </ul>
+    </div>
+
   );
 };
 
@@ -31,8 +34,7 @@ const Logout = () => {
     <li onClick={() => deleteToken()}>
       <NavLink to='/auth/login' className='sidebar-route text-red-700'>
         <div className='flex items-center'>
-          <i className='fas fa-sign-out-alt' />
-          <span className='text-sm  ml-2'>Cerrar Sesión</span>
+          <span className='text-sm  ml-2'> <p id="logout"> Cerrar Sesión</p></span>
         </div>
       </NavLink>
     </li>
@@ -41,31 +43,25 @@ const Logout = () => {
 
 const Logo = () => {
   return (
-    <div className='py-3 w-full flex flex-col items-center justify-center'>
-      <img src='gestion.png' alt='Logo' className='h-16' id="logo"/>
-      <span className='my-2 text-xl font-bold text-center' id="title">Sistema gestión proyectos</span>
+    <>
+    <div className="logo">
+
+      <img src='gestion.png' alt='Logo' className='h-16' id="img"/>
+      
+    
     </div>
+    <span className='my-2 text-xl font-bold text-center' id="title">Sistema gestión proyectos</span>
+    </>
   );
 };
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   return (
-    <div className='flex flex-col md:flex-row flex-no-wrap md:h-full'>
+    <div className='sidebar-father'>
       {/* Sidebar starts */}
-
-      <div className='sidebar hidden md:flex'>
-        <div className='px-8'>
           <Logo />
           <SidebarLinks />
-        </div>
-      </div>
-      <div className='flex md:hidden w-full justify-between bg-gray-800 p-2 text-white'>
-        <i className={`fas fa-${open ? 'times' : 'bars'}`} onClick={() => setOpen(!open)} />
-        <i className='fas fa-home' />
-      </div>
-      {open && <ResponsiveSidebar />}
-      {/* Sidebar ends */}
     </div>
   );
 };
@@ -93,8 +89,8 @@ const SidebarRoute = ({ to, title, icon }) => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? 'sidebar-route text-white bg-indigo-700'
-            : 'sidebar-route text-gray-900 hover:text-white hover:bg-indigo-400'
+            ? 'sidebar-route text-white bg-green-700'
+            : 'sidebar-route text-gray-900 hover:text-white hover:bg-green-400'
         }
       >
         <div className='flex items-center'>

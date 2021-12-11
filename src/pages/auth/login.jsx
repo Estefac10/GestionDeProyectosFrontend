@@ -34,18 +34,20 @@ const Login = () => {
   }, [dataMutation, setToken, navigate]);
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full p-10'>
-      <h1 className='text-xl font-bold text-gray-900'>Iniciar sesión</h1>
+    <div className='formLogin'>
+      <div className="titleLogin"> <b><h1>Login</h1></b> </div>
       <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
-        <Input name='correo' type='email' label='Correo' required={true} />
-        <Input name='password' type='password' label='Contraseña' required={true} />
+        <p className="text">Usuario</p>
+        <Input name='correo' type='email'  required={true} />
+        <p className="text">Contraseña</p>
+        <Input name='password' type='password' required={true} />
         <ButtonLoading
           disabled={Object.keys(formData).length === 0}
           loading={mutationLoading}
           text='Iniciar Sesión'
         />
       </form>
-      <span>¿No tienes una cuenta?</span>
+      <span className="text">¿No tienes una cuenta?</span>
       <Link to='/auth/register'>
         <span className='text-blue-700'>Regístrate</span>
       </Link>

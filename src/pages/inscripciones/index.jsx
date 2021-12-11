@@ -11,17 +11,17 @@ import {
   AccordionDetailsStyled,
 } from 'components/Accordion';
 
+
 const IndexInscripciones = () => {
   const { data, loading, error, refetch } = useQuery(GET_INSCRIPCIONES);
 
   useEffect(() => {
     console.log(data);
   }, [data]);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Cargando...</div> ;
   return (
     <PrivateRoute roleList={['ADMINISTRADOR', 'LIDER']}>
       <div className='p-10'>
-        <div>Pagina de inscripciones</div>
         <div className='my-4'>
           <AccordionInscripcion
             titulo='Inscripciones aprobadas'
