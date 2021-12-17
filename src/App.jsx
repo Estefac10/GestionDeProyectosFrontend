@@ -25,7 +25,7 @@ import Profile from 'pages/profile';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://agile-bayou-92325.herokuapp.com',
 });
 
 const authLink = setContext((_, { headers }) => {
