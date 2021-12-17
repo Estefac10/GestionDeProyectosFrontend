@@ -10,6 +10,7 @@ const GET_USUARIOS = gql`
       estado
       identificacion
       rol
+      foto
     }
   }
 `;
