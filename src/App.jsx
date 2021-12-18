@@ -25,7 +25,7 @@ import Profile from 'pages/profile';
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://serene-castle-45444.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
