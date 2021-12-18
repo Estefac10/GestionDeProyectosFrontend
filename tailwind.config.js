@@ -11,5 +11,5 @@ module.exports = {
       textColor: ['disabled'],
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [],
 };
